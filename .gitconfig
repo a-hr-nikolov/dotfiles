@@ -1,0 +1,14 @@
+[init]
+	defaultBranch = main
+[user]
+	email = a.hr.nikolov@gmail.com
+	name = Atanas Nikolov
+[pull]
+	rebase = false
+[core]
+  pager = less -FXRS
+	editor = code
+[color]
+	ui = true
+[merge]
+  tool = code
