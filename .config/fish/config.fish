@@ -8,6 +8,7 @@ set -x LC_ALL en_US.UTF-8
 set -x HISTCONTROL ignoreboth
 set -x PAGER less
 set -x EDITOR /usr/bin/code
+set -x PATH $PATH ~/go/bin
 
 ########################################################################################
 # FUNCTIONS 
@@ -96,8 +97,8 @@ alias py='python3'
 alias djm='python3 manage.py'
 
 # Google Drive Sync aliases
-alias drivepush='rclone sync ~/gdrive/Obsidian drive:--Obsidian'
-alias drivepull='rclone sync drive:--Obsidian ~/gdrive/Obsidian'
+alias drivepush='rclone sync ~/gdrive/Obsidian drive:obsidian'
+alias drivepull='rclone sync drive:obsidian ~/gdrive/Obsidian'
 
 # navigation
 alias ..='cd ..'

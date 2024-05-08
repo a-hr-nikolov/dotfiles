@@ -27,6 +27,8 @@
 import os
 import subprocess
 
+# from qtile_extras.widget import StatusNotifier
+# import colors
 from libqtile import (  # type: ignore # noqa: F401
     bar,
     extension,
@@ -49,9 +51,6 @@ from libqtile.lazy import lazy  # type: ignore
 from qtile_extras import widget  # type: ignore
 from qtile_extras.widget.decorations import BorderDecoration  # type: ignore
 
-# from qtile_extras.widget import StatusNotifier
-import colors
-
 # Key constants
 WIN = "mod4"  # mod4 = super/win in qtile config
 ALT = "mod1"  # mod1 = alt
@@ -61,6 +60,8 @@ L_ARROW = "leftarrow"
 R_ARROW = "rightarrow"
 U_ARROW = "uparrow"
 D_ARROW = "downarrow"
+SPACE = "space"
+ENTER = "Return"
 
 # User apps
 USR_TERM = "konsole"  # My terminal of choice
@@ -96,9 +97,10 @@ def maximize_by_switching_layout(qtile):
 
 keys = [
     # The essentials
-    Key([WIN], "Return", lazy.spawn(USR_TERM), desc="Terminal"),
-    # Key([MOD, SHIFT], "Return", lazy.spawn("rofi -show drun"), desc="Run Launcher"),
-    Key([WIN, SHIFT], "Return", lazy.spawn(USR_LNCHR), desc="Run Launcher"),
+    Key([WIN], ENTER, lazy.spawn(USR_TERM), desc="Terminal"),
+    # Key([MOD, SHIFT], ENTER, lazy.spawn("rofi -show drun"), desc="Run Launcher"),
+    # Key([WIN, SHIFT], ENTER, lazy.spawn(USR_LNCHR), desc="Run Launcher"),
+    Key([ALT], SPACE, lazy.spawn(USR_LNCHR), desc="Run Launcher"),
     Key([WIN], "b", lazy.spawn(USR_BRWSR), desc="Web browser"),
     Key([WIN], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([WIN, SHIFT], "c", lazy.window.kill(), desc="Kill focused window"),
@@ -121,7 +123,7 @@ keys = [
     Key([WIN], "k", lazy.layout.up(), desc="Move focus up"),
     Key(
         [WIN],
-        "space",
+        SPACE,
         lazy.layout.next(),
         desc="Move window focus to other window",
     ),
@@ -161,7 +163,7 @@ keys = [
     # multiple stack panes
     Key(
         [WIN, SHIFT],
-        "space",
+        SPACE,
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
@@ -298,7 +300,17 @@ for group in groups:
         ]
     )
 
-colors = colors.DoomOne
+colors = [
+    ["#282c34", "#282c34"],  # bg
+    ["#bbc2cf", "#bbc2cf"],  # fg
+    ["#1c1f24", "#1c1f24"],  # color01
+    ["#ff6c6b", "#ff6c6b"],  # color02
+    ["#98be65", "#98be65"],  # color03
+    ["#da8548", "#da8548"],  # color04
+    ["#51afef", "#51afef"],  # color05
+    ["#c678dd", "#c678dd"],  # color06
+    ["#46d9ff", "#46d9ff"],  # color15
+]
 
 layout_theme = {
     "border_width": 2,
