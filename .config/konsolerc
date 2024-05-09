@@ -1,0 +1,21 @@
+MenuBar=Disabled
+
+[Desktop Entry]
+DefaultProfile=anikolov.profile
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+RememberWindowSize=false
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[TabBar]
+ExpandTabWidth=true
+TabBarVisibility=AlwaysShowTabBar
+
+[UiSettings]
+ColorScheme=
