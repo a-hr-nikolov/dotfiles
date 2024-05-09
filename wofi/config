@@ -1,0 +1,6 @@
+show=drun
+allow_images=true
+matching=fuzzy
+insensitive=true
+gtk_dark=true
+line_wrap=word
