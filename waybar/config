@@ -5,12 +5,7 @@
   // "width": 1600, // Waybar width
   // "gtk-layer-shell": "false",
   // Choose the order of the modules
-  "modules-left": [
-    "hyprland/workspaces",
-    "custom/scratchpad",
-    "hyprland/mode",
-    "tray"
-  ],
+  "modules-left": ["hyprland/workspaces", "custom/scratchpad", "hyprland/mode"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "custom/zypper",
@@ -20,12 +15,11 @@
     "memory",
     "temperature",
     "backlight",
-    "battery",
-    "battery#bat2",
     "pulseaudio",
     "custom/layout",
     "clock",
-    "custom/notification"
+    "custom/notification",
+    "tray"
   ],
   "hyprland/mode": {
     "format": " {}"
@@ -67,7 +61,7 @@
     "format": "{short} {variant}"
   },
   // Modules configuration
-  //  "hyprland/workspaces": {
+  // "hyprland/workspaces": {
   //     "disable-scroll": true,
   //     "all-outputs": true,
   //     "format": "{name}: {icon}",

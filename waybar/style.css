@@ -9,13 +9,13 @@
 }
 
 window#waybar {
-  color: rgba(53, 185, 171, 1);
-  background-color: rgba(23, 63, 79, 0.4);
-  border-bottom: 2px solid rgba(53, 185, 171, 0.4);
+  color: rgb(241, 244, 150);
+  background-color: rgba(18, 16, 69, 0.85);
+  /* border-bottom: 2px solid rgb(53, 185, 172); */
 }
 
 window#waybar.solo {
-  color: rgba(53, 185, 171, 1);
+  color: rgb(238, 243, 152);
 }
 
 #workspaces {
