@@ -42,8 +42,8 @@ alias py='python3'
 alias djm='python3 manage.py'
 
 # Google Drive Sync aliases
-alias drivepush='rclone sync ~/gdrive/Obsidian drive:--Obsidian'
-alias drivepull='rclone sync drive:--Obsidian ~/gdrive/Obsidian'
+alias drivepush='rclone sync ~/gdrive/Obsidian drive:obsidian'
+alias drivepull='rclone sync drive:obsidian ~/gdrive/Obsidian'
 
 # navigation
 alias ..='cd ..'
@@ -64,3 +64,6 @@ alias rm='rm -i'
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for change to take effect.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Log out and log back in for change to take effect.'"
+
+# Obsidian + Git
+alias obspush="~/dotfiles/scripts/obspush.sh"

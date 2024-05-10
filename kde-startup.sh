@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # A script to start specific apps on specific KDE virtual desktops.
 #
 # To extend the script make sure to set appropriate sleep timers after each program.

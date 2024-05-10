@@ -146,6 +146,7 @@ fixed=FiraMono Nerd Font,9,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 [KDE]
 AnimationDurationFactor=0
 LookAndFeelPackage=org.kde.breezedark.desktop
+ShowDeleteCommand=false
 
 [KFileDialog Settings]
 Allow Expansion=false
