@@ -10,7 +10,7 @@ Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Lay
 _k_friendly_name=Keyboard Layout Switcher
 
 [kaccess]
-Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
+Toggle Screen Reader On and Off=none,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
 
 [kcm_touchpad]
@@ -73,7 +73,7 @@ Switch Window Left=Meta+Alt+Left,Meta+Alt+Left,Switch to Window to the Left
 Switch Window Right=Meta+Alt+Right,Meta+Alt+Right,Switch to Window to the Right
 Switch Window Up=Meta+Alt+Up,Meta+Alt+Up,Switch to Window Above
 Switch to Desktop 1=Meta+1,Ctrl+F1,Switch to Desktop 1
-Switch to Desktop 10=,,Switch to Desktop 10
+Switch to Desktop 10=Meta+0,,Switch to Desktop 10
 Switch to Desktop 11=none,,Switch to Desktop 11
 Switch to Desktop 12=none,,Switch to Desktop 12
 Switch to Desktop 13=none,,Switch to Desktop 13
@@ -221,7 +221,7 @@ Sleep=Sleep,Sleep,Suspend
 Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
 Turn Off Screen=none,none,Turn Off Screen
 _k_friendly_name=KDE Power Management System
-powerProfile=Battery\tMeta+B,Battery\tMeta+B,Switch Power Profile
+powerProfile=Battery,Battery\tMeta+B,Switch Power Profile
 
 [plasmashell]
 _k_friendly_name=plasmashell
@@ -255,6 +255,30 @@ switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
 
+[services][Obsidian.desktop]
+_launch=Meta+Ctrl+Alt+O
+
+[services][anki.desktop]
+_launch=Meta+Ctrl+Alt+A
+
+[services][code.desktop]
+_launch=Meta+Ctrl+Alt+C
+
+[services][firefox-2.desktop]
+_launch=Meta+Ctrl+Alt+V
+
+[services][firefox.desktop]
+_launch=Meta+B\tMeta+Ctrl+Alt+1
+
+[services][google-chrome-2.desktop]
+_launch=\tMeta+Alt+G
+
+[services][google-chrome-3.desktop]
+_launch=Meta+Ctrl+Alt+3
+
+[services][google-chrome-4.desktop]
+_launch=Meta+Ctrl+Alt+2
+
 [services][kitty.desktop]
 _launch=Meta+T
 
@@ -263,9 +287,6 @@ _launch=Meta+M
 
 [services][org.kde.spectacle.desktop]
 RecordRegion=none
-
-[services][wofi.desktop]
-_launch=
 
 [wacomtablet]
 Map to fullscreen=Meta+Ctrl+F,Meta+Ctrl+F,Map to fullscreen

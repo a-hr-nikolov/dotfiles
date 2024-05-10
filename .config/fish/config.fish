@@ -10,6 +10,9 @@ set -x PAGER less
 set -x EDITOR /usr/bin/code
 set -x PATH $PATH ~/go/bin
 
+# Set up fzf key bindings
+fzf --fish | source
+
 ########################################################################################
 # FUNCTIONS 
 ########################################################################################

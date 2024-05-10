@@ -11,8 +11,15 @@
 # ridden in every subshell.
 
 test -s ~/.alias && . ~/.alias || true
+
+# Starship integration
 eval "$(starship init bash)"
 
+# fzf - fuzzy finder integration
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+# Use go bin as part of path
 export PATH=$PATH:~/go/bin
 
 ########################################################################################
