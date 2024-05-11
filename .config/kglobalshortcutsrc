@@ -125,7 +125,7 @@ Window Fullscreen=none,,Make Window Fullscreen
 Window Grow Horizontal=none,,Expand Window Horizontally
 Window Grow Vertical=none,,Expand Window Vertically
 Window Lower=none,,Lower Window
-Window Maximize=Meta+Up,Meta+PgUp,Maximize Window
+Window Maximize=Meta+F,Meta+PgUp,Maximize Window
 Window Maximize Horizontal=none,,Maximize Window Horizontally
 Window Maximize Vertical=none,,Maximize Window Vertically
 Window Minimize=Meta+PgDown,Meta+PgDown,Minimize Window
@@ -151,7 +151,7 @@ Window Quick Tile Bottom Left=none,,Quick Tile Window to the Bottom Left
 Window Quick Tile Bottom Right=none,,Quick Tile Window to the Bottom Right
 Window Quick Tile Left=Meta+Left,Meta+Left,Quick Tile Window to the Left
 Window Quick Tile Right=Meta+Right,Meta+Right,Quick Tile Window to the Right
-Window Quick Tile Top=none,Meta+Up,Quick Tile Window to the Top
+Window Quick Tile Top=Meta+Up,Meta+Up,Quick Tile Window to the Top
 Window Quick Tile Top Left=none,,Quick Tile Window to the Top Left
 Window Quick Tile Top Right=none,,Quick Tile Window to the Top Right
 Window Raise=none,,Raise Window
@@ -235,7 +235,7 @@ activate task manager entry 6=none,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=none,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=none,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=none,Meta+9,Activate Task Manager Entry 9
-activate widget 18=,none,Activate Keyboard Layout Widget
+activate widget 18=none,none,Activate Keyboard Layout Widget
 activate widget 28=none,none,Activate Task Manager Widget
 activate widget 4=Alt+F1,none,Activate Application Launcher Widget
 clear-history=none,,Clear Clipboard History
@@ -264,17 +264,11 @@ _launch=Meta+Ctrl+Alt+A
 [services][code.desktop]
 _launch=Meta+Ctrl+Alt+C
 
-[services][firefox-2.desktop]
-_launch=Meta+Ctrl+Alt+V
-
 [services][firefox.desktop]
 _launch=Meta+B\tMeta+Ctrl+Alt+1
 
 [services][google-chrome-2.desktop]
-_launch=\tMeta+Alt+G
-
-[services][google-chrome-3.desktop]
-_launch=Meta+Ctrl+Alt+3
+_launch=Meta+Ctrl+Alt+4
 
 [services][google-chrome-4.desktop]
 _launch=Meta+Ctrl+Alt+2
@@ -287,6 +281,15 @@ _launch=Meta+M
 
 [services][org.kde.spectacle.desktop]
 RecordRegion=none
+
+[services][vivaldi-2.desktop]
+_launch=Meta+Ctrl+Alt+V
+
+[services][vivaldi-edanbjnaiofggfmimiidpfmhggkbokck-Default.desktop]
+_launch=Meta+Ctrl+Alt+D
+
+[services][vivaldi-stable.desktop]
+new-private-window=Meta+Ctrl+Alt+3
 
 [wacomtablet]
 Map to fullscreen=Meta+Ctrl+F,Meta+Ctrl+F,Map to fullscreen

@@ -139,6 +139,8 @@ History Items[$e]=file:$HOME/Desktop
 [General]
 BrowserApplication=google-chrome.desktop
 ColorSchemeHash=cb4c6ee5cc9a59dbe09fb467a529af1bf5c55c97
+TerminalApplication=kitty
+TerminalService=kitty.desktop
 XftHintStyle=hintslight
 XftSubPixel=rgb
 fixed=FiraMono Nerd Font,9,-1,5,400,0,0,0,0,0,0,0,0,0,0,1

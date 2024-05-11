@@ -19,22 +19,25 @@ switch_to_desktop() {
     qdbus6 org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut "Switch to Desktop $desktop_number"
 }
 
-###
-switch_to_desktop 1
-firefox &
-sleep 1
+### Loading a Facebook (Messenger) and Gmail PWAs (through Vivaldi)
+### Alternatively, they can be 
+switch_to_desktop 1  # in case someone runs it directly
+sleep 3  # Necessary due to bootup taking some time.
+/opt/vivaldi/vivaldi --profile-directory=Default --app-id=kippjfofjhjlffjecoapiogbkgbpmgej &  # Messenger
+/opt/vivaldi/vivaldi --profile-directory=Default --app-id=fmgjjmmmlfnkbppncabfkddbjimcfncm &  # Gmail
+sleep 2
 
 ###
 switch_to_desktop 2 
-google-chrome --profile-directory="Default" &
+vivaldi --profile-directory=Default &
 sleep 1
 
 ###
 switch_to_desktop 3 
-google-chrome --profile-directory="Profile 1" &
+firefox &
 sleep 1
 
-###
+### Work Profile
 switch_to_desktop 4 1
 google-chrome --profile-directory="Profile 2" & disown
 sleep 1
