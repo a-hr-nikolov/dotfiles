@@ -282,9 +282,6 @@ _launch=Meta+M
 [services][org.kde.spectacle.desktop]
 RecordRegion=none
 
-[services][vivaldi-2.desktop]
-_launch=Meta+Ctrl+Alt+V
-
 [services][vivaldi-edanbjnaiofggfmimiidpfmhggkbokck-Default.desktop]
 _launch=Meta+Ctrl+Alt+D
 

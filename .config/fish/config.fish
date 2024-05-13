@@ -60,18 +60,6 @@ function copy
     end
 end
 
-# Function to make 'which' work with aliases as well.
-function which
-    # Check if the given argument is an alias
-    if functions --query $argv[1]
-        # Print what the alias points to
-        functions $argv[1]
-    else
-        # If not an alias, run regular which command
-        command which $argv
-    end
-end
-
 ########################################################################################
 # Starship 
 ########################################################################################
@@ -113,11 +101,11 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # adding flags
-alias df='df -h'               # human-readable sizes
+alias df='df -h'                # human-readable sizes
 alias du='du -h'
-alias free='free -m'           # show sizes in MB
-alias grep='grep --color=auto' # colorize output (good for log files)
-alias cp='cp -i'
+alias free='free -m'            # show sizes in MB
+alias grep='grep --color=auto'  # colorize output (good for log files)
+alias cp='cp -i'                # makes potentially destructive commands require confirmation
 alias mv='mv -i'
 alias rm='rm -i'
 
@@ -126,3 +114,10 @@ alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for 
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Log out and log back in for change to take effect.'"
 
+# grep and rgrep
+alias grepls="grep -lrS"    # returns the files that simply include the pattern
+alias rg="rg -S"            # smartcase search
+alias rgls="rg -lrS"
+
+# searching aliases
+alias fcmd="history | fzf"

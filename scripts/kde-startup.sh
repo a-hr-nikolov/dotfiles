@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# A script to start specific apps on specific KDE virtual desktops.
+# A script to start specific apps on specific KDE virtual desktops. Basically trying to
+# mimic a tiling window manager startup. 
 #
 # To extend the script make sure to set appropriate sleep timers after each program.
 # That is because some apps are really slow to start and if you know a specific app is
@@ -26,20 +27,17 @@ sleep 3  # Necessary due to bootup taking some time.
 /opt/vivaldi/vivaldi --profile-directory=Default --app-id=kippjfofjhjlffjecoapiogbkgbpmgej &  # Messenger
 sleep 1
 /opt/vivaldi/vivaldi --profile-directory=Default --app-id=fmgjjmmmlfnkbppncabfkddbjimcfncm &  # Gmail
+sleep 1
+vivaldi --profile-directory=Default &
 sleep 3
 
 ###
 switch_to_desktop 2 
-vivaldi --profile-directory=Default &
-sleep 2
-
-###
-switch_to_desktop 3 
 firefox &
-sleep 2
+sleep 3
 
 ### Work Profile
-switch_to_desktop 4
+switch_to_desktop 3
 google-chrome --profile-directory="Profile 2" & disown
 sleep 1
 

@@ -9,8 +9,8 @@
   "modules-left": ["hyprland/workspaces", "custom/scratchpad", "hyprland/mode"],
   "modules-center": ["hyprland/window", "custom/splash"],
   "modules-right": [
-    "hyprland/language",
     "custom/zypper",
+    "hyprland/language",
     "network",
     "bluetooth",
     "cpu",
@@ -51,18 +51,15 @@
   //   "exec": "swaymsg -mrt subscribe '[\"input\"]' | jq -r --unbuffered \"select(.change == \\\"xkb_layout\\\") | .input | select(.type == \\\"keyboard\\\") | .xkb_active_layout_name | .[0:2]\""
   // },
   "custom/zypper": {
-    "format": "{} ",
+    "format": "{}  ",
     "interval": 3600,
     "exec": "zypper lu | grep 'v |' | wc -l; echo 'packages to update'",
     "exec-if": "exit 0",
     "on-click": "exec alacritty -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
     "signal": 8
   },
-  "sway/language": {
-    "format": "{short} {variant}"
-  },
   "hyprland/language": {
-    "format": "{short} {variant}"
+    "format": "{short}"
   },
   "custom/splash": {
     "exec": "hyprctl splash",
