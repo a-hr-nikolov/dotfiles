@@ -41,9 +41,11 @@ alias lt='eza -aT --color=always --group-directories-first' # tree listing
 alias py='python3'
 alias djm='python3 manage.py'
 
-# Google Drive Sync aliases
-alias drivepush='rclone sync ~/gdrive/Obsidian drive:obsidian'
-alias drivepull='rclone sync drive:obsidian ~/gdrive/Obsidian'
+# Obsidian Sync Aliases
+alias obpushdrive='rclone sync ~/gdrive/Obsidian drive:obsidian'
+alias obpulldrive='rclone sync drive:obsidian ~/gdrive/Obsidian'
+alias obpushgit="~/dotfiles/scripts/obspush.sh"
+alias obpushall="obpushdrive; obpushgit"
 
 # navigation
 alias ..='cd ..'
@@ -54,6 +56,7 @@ alias .5='cd ../../../../..'
 
 # adding flags
 alias df='df -h'               # human-readable sizes
+alias du='du -h'
 alias free='free -m'           # show sizes in MB
 alias grep='grep --color=auto' # colorize output (good for log files)
 alias cp='cp -i'
@@ -64,6 +67,3 @@ alias rm='rm -i'
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for change to take effect.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Log out and log back in for change to take effect.'"
-
-# Obsidian + Git
-alias obspush="~/dotfiles/scripts/obspush.sh"
