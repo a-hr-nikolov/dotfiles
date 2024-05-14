@@ -121,3 +121,7 @@ alias rgls="rg -lrS"
 
 # searching aliases
 alias fcmd="history | fzf"
+alias fman="compgen -c | fzf | xargs man"  # actually doesn't work in fish
+
+# utils
+alias fbig="du -ah . | sort -hr | head -n 30"  # gets disk usage, sorts it in reverse, prints the first 30
