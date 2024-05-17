@@ -22,6 +22,13 @@ eval "$(fzf --bash)"
 # Use go bin as part of path
 export PATH=$PATH:~/go/bin
 
+export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+export HISTCONTROL=ignoreboth
+export PAGER=less
+export EDITOR=/usr/bin/code
+# export TERM=xterm-256color
+
 ########################################################################################
 # Aliases 
 ########################################################################################

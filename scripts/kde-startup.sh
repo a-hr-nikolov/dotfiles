@@ -26,20 +26,14 @@ switch_to_desktop 1  # in case someone runs it directly
 sleep 3  # Necessary due to bootup taking some time.
 /opt/vivaldi/vivaldi --profile-directory=Default --app-id=kippjfofjhjlffjecoapiogbkgbpmgej &  # Messenger
 sleep 1
-/opt/vivaldi/vivaldi --profile-directory=Default --app-id=fmgjjmmmlfnkbppncabfkddbjimcfncm &  # Gmail
-sleep 1
 vivaldi --profile-directory=Default &
-sleep 3
-
-###
-switch_to_desktop 2 
 firefox &
 sleep 3
 
 ### Work Profile
-switch_to_desktop 3
+switch_to_desktop 2
 google-chrome --profile-directory="Profile 2" & disown
-sleep 1
+sleep 2
 
 ### END OF CHAIN
 # Optionally, you may stay on the desktop with the last app open.
