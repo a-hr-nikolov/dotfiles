@@ -7,7 +7,7 @@ set -x LANG en_US.UTF-8
 # set -x LC_ALL en_US.UTF-8
 set -x PAGER less
 set -x EDITOR /usr/bin/code
-set -x PATH $PATH ~/go/bin
+set -x PATH $PATH $HOME/go/bin
 # set -x TERM xterm-256color  # uncomment if some programs have issues with the emulator
 
 # Set up fzf key bindings
