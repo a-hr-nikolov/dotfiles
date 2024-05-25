@@ -19,7 +19,10 @@
 import os
 import subprocess
 
-# import colors
+# Import custom colors
+import colors as clrs
+
+# import qtile specific libraries
 from libqtile import (  # type: ignore # noqa: F401
     bar,
     extension,
@@ -42,7 +45,10 @@ from libqtile.lazy import lazy  # type: ignore
 from qtile_extras import widget  # type: ignore
 from qtile_extras.widget.decorations import BorderDecoration  # type: ignore
 
-# Key constants
+#####################
+### KEY CONSTANTS ###
+#####################
+
 WIN = "mod4"  # mod4 = super/win in qtile config
 ALT = "mod1"  # mod1 = alt
 SHIFT = "shift"
@@ -54,7 +60,10 @@ D_ARROW = "Down"  # "downarrow"
 SPACE = "space"
 ENTER = "Return"
 
-# User apps
+#################
+### USER APPS ###
+#################
+
 USR_TERM = "kitty"  # My terminal of choice
 USR_BRWSR = "firefox"  # My browser of choice
 USR_LNCHR = "krunner"  # My launcher of choice
@@ -78,6 +87,10 @@ def maximize_by_switching_layout(qtile):
     elif current_layout_name == "max":
         qtile.current_group.layout = "monadtall"
 
+
+###################
+### KEYBINDINGS ###
+###################
 
 keys = [
     ##################
@@ -309,17 +322,11 @@ for group in groups:
         ]
     )
 
-colors = [
-    ["#282c34", "#282c34"],  # bg
-    ["#bbc2cf", "#bbc2cf"],  # fg
-    ["#1c1f24", "#1c1f24"],  # color01
-    ["#ff6c6b", "#ff6c6b"],  # color02
-    ["#98be65", "#98be65"],  # color03
-    ["#da8548", "#da8548"],  # color04
-    ["#51afef", "#51afef"],  # color05
-    ["#c678dd", "#c678dd"],  # color06
-    ["#46d9ff", "#46d9ff"],  # color15
-]
+colors = clrs.DoomOne
+
+##############
+### LAYOUT ###
+##############
 
 layout_theme = {
     "border_width": 2,
