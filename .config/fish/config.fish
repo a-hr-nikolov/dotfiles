@@ -10,6 +10,9 @@ set -x EDITOR /usr/bin/code
 set -x PATH $PATH $HOME/go/bin
 # set -x TERM xterm-256color  # uncomment if some programs have issues with the emulator
 
+# For KVM
+set -x LIBVIRT_DEFAULT_URI qemu:///system
+
 # Set up fzf key bindings
 fzf --fish | source
 

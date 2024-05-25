@@ -15,19 +15,10 @@
 #
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
 
 import os
 import subprocess
 
-# from qtile_extras.widget import StatusNotifier
 # import colors
 from libqtile import (  # type: ignore # noqa: F401
     bar,
@@ -41,7 +32,7 @@ from libqtile.config import (  # type: ignore
     Drag,
     Group,
     Key,
-    KeyChord,
+    # KeyChord,
     Match,
     Screen,
 )
@@ -56,25 +47,18 @@ WIN = "mod4"  # mod4 = super/win in qtile config
 ALT = "mod1"  # mod1 = alt
 SHIFT = "shift"
 CTRL = "control"
-L_ARROW = "leftarrow"
-R_ARROW = "rightarrow"
-U_ARROW = "uparrow"
-D_ARROW = "downarrow"
+L_ARROW = "Left"  # "leftarrow"
+R_ARROW = "Right"  # "rightarrow"
+U_ARROW = "Up"  # "uparrow"
+D_ARROW = "Down"  # "downarrow"
 SPACE = "space"
 ENTER = "Return"
 
 # User apps
-USR_TERM = "konsole"  # My terminal of choice
+USR_TERM = "kitty"  # My terminal of choice
 USR_BRWSR = "firefox"  # My browser of choice
 USR_LNCHR = "krunner"  # My launcher of choice
 USR_CODE = "code"
-
-
-# Allows you to input a name when adding treetab section.
-@lazy.layout.function
-def add_treetab_section(layout):
-    prompt = qtile.widgets_map["prompt"]
-    prompt.start_input("Section name: ", layout.cmd_add_section)
 
 
 # A function for hide/show all the windows in a group
@@ -96,24 +80,29 @@ def maximize_by_switching_layout(qtile):
 
 
 keys = [
-    # The essentials
+    ##################
+    ### ESSENTIALS ###
+    ##################
     Key([WIN], ENTER, lazy.spawn(USR_TERM), desc="Terminal"),
     # Key([MOD, SHIFT], ENTER, lazy.spawn("rofi -show drun"), desc="Run Launcher"),
     # Key([WIN, SHIFT], ENTER, lazy.spawn(USR_LNCHR), desc="Run Launcher"),
     Key([ALT], SPACE, lazy.spawn(USR_LNCHR), desc="Run Launcher"),
     Key([WIN], "b", lazy.spawn(USR_BRWSR), desc="Web browser"),
-    Key([WIN], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([WIN, SHIFT], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([WIN], "t", lazy.spawn(USR_TERM), desc="Terminal"),
+    # Key([WIN], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([WIN, ALT], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([WIN, SHIFT], "r", lazy.reload_config(), desc="Reload the config"),
     # Key([WIN, SHIFT], "q", lazy.spawn("dm-logout -r"), desc="Logout menu"),
-    Key([WIN, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([WIN, CTRL], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key(
         [WIN],
         "r",
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget",
     ),
-    # Switch between windows
+    ########################
+    ### WINDOW SWITCHING ###
+    ########################
     # Some layouts like 'monadtall' only need to use j/k to move
     # through the stack, but other layouts like 'columns' will
     # require all four directions h/j/k/l to move around.
@@ -121,8 +110,12 @@ keys = [
     Key([WIN], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([WIN], "j", lazy.layout.down(), desc="Move focus down"),
     Key([WIN], "k", lazy.layout.up(), desc="Move focus up"),
+    Key([WIN, ALT], L_ARROW, lazy.layout.left(), desc="Move focus to left"),
+    Key([WIN, ALT], R_ARROW, lazy.layout.right(), desc="Move focus to right"),
+    Key([WIN, ALT], D_ARROW, lazy.layout.down(), desc="Move focus down"),
+    Key([WIN, ALT], U_ARROW, lazy.layout.up(), desc="Move focus up"),
     Key(
-        [WIN],
+        [WIN, ALT],
         SPACE,
         lazy.layout.next(),
         desc="Move window focus to other window",
@@ -155,7 +148,35 @@ keys = [
         "k",
         lazy.layout.shuffle_up(),
         lazy.layout.section_up().when(layout=["treetab"]),
-        desc="Move window downup/move up a section in treetab",
+        desc="Move window up/move up a section in treetab",
+    ),
+    Key(
+        [WIN],
+        L_ARROW,
+        lazy.layout.shuffle_left(),
+        lazy.layout.move_left().when(layout=["treetab"]),
+        desc="Move window to the left/move tab left in treetab",
+    ),
+    Key(
+        [WIN],
+        R_ARROW,
+        lazy.layout.shuffle_right(),
+        lazy.layout.move_right().when(layout=["treetab"]),
+        desc="Move window to the right/move tab right in treetab",
+    ),
+    Key(
+        [WIN],
+        D_ARROW,
+        lazy.layout.shuffle_down(),
+        lazy.layout.section_down().when(layout=["treetab"]),
+        desc="Move window down/move down a section in treetab",
+    ),
+    Key(
+        [WIN],
+        U_ARROW,
+        lazy.layout.shuffle_up(),
+        lazy.layout.section_up().when(layout=["treetab"]),
+        desc="Move window up/move up a section in treetab",
     ),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
@@ -167,13 +188,9 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    # Treetab prompt
-    Key(
-        [WIN, SHIFT],
-        "a",
-        add_treetab_section,
-        desc="Prompt to add new section in treetab",
-    ),
+    #######################
+    ### WINDOW RESIZING ###
+    #######################
     # Grow/shrink windows left/right.
     # This is mainly for the 'monadtall' and 'monadwide' layouts
     # although it does also work in the 'bsp' and 'columns' layouts.
@@ -193,18 +210,8 @@ keys = [
     ),
     # Grow windows up, down, left, right.  Only works in certain layouts.
     # Works in 'bsp' and 'columns' layout.
-    Key(
-        [WIN, CTRL],
-        "h",
-        lazy.layout.grow_left(),
-        desc="Grow window to the left",
-    ),
-    Key(
-        [WIN, CTRL],
-        "l",
-        lazy.layout.grow_right(),
-        desc="Grow window to the right",
-    ),
+    Key([WIN, CTRL], "h", lazy.layout.grow_left(), desc="Grow window left"),
+    Key([WIN, CTRL], "l", lazy.layout.grow_right(), desc="Grow window right"),
     Key([WIN, CTRL], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([WIN, CTRL], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([WIN], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
@@ -214,7 +221,7 @@ keys = [
         lazy.layout.maximize(),
         desc="Toggle between min and max sizes",
     ),
-    Key([WIN], "t", lazy.window.toggle_floating(), desc="toggle floating"),
+    Key([WIN, ALT], "f", lazy.window.toggle_floating(), desc="toggle floating"),
     Key(
         [WIN],
         "f",
@@ -228,7 +235,9 @@ keys = [
         minimize_all(),
         desc="Toggle hide/show all windows on current group",
     ),
-    # Switch focus of monitors
+    ################
+    ### MONITORS ###
+    ################
     Key([WIN], "period", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([WIN], "comma", lazy.prev_screen(), desc="Move focus to prev monitor"),
 ]
@@ -262,8 +271,8 @@ group_labels = [
 group_layouts = [
     "monadtall",
     "monadtall",
-    "tile",
-    "tile",
+    "monadtall",
+    "monadtall",
     "monadtall",
     "monadtall",
     "monadtall",
@@ -283,14 +292,14 @@ for i in range(len(group_names)):
 for group in groups:
     keys.extend(
         [
-            # mod1 + letter of group = switch to group
+            # win + letter of group = switch to group
             Key(
                 [WIN],
                 group.name,
                 lazy.group[group.name].toscreen(),
                 desc="Switch to group {}".format(group.name),
             ),
-            # mod1 + shift + letter of group = move focused window to group
+            # win + shift + letter of group = move focused window to group
             Key(
                 [WIN, SHIFT],
                 group.name,

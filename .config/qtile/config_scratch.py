@@ -3,6 +3,14 @@ Since a lot of the configuration in config.py has to be commented out, here are 
 the snippets that can be used to restore the config.
 """
 
+
+# Allows you to input a name when adding treetab section.
+@lazy.layout.function
+def add_treetab_section(layout):
+    prompt = qtile.widgets_map["prompt"]
+    prompt.start_input("Section name: ", layout.cmd_add_section)
+
+
 layouts = [
     # layout.Bsp(**layout_theme),
     # layout.Floating(**layout_theme)

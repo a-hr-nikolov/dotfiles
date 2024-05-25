@@ -29,6 +29,9 @@ export PAGER=less
 export EDITOR=/usr/bin/code
 # export TERM=xterm-256color
 
+# For KVM
+export LIBVIRT_DEFAULT_URI='qemu:///system'
+
 ########################################################################################
 # Aliases 
 ########################################################################################
