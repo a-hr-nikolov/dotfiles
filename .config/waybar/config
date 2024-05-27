@@ -7,7 +7,7 @@
 
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces", "custom/scratchpad", "hyprland/mode"],
-  "modules-center": ["hyprland/window", "custom/splash"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "custom/zypper",
     "hyprland/language",
@@ -60,11 +60,6 @@
   },
   "hyprland/language": {
     "format": "{short}"
-  },
-  "custom/splash": {
-    "exec": "hyprctl splash",
-    "interval": "once",
-    "tooltip": false
   },
   // Modules configuration
   // "hyprland/workspaces": {

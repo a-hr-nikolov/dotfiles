@@ -113,6 +113,12 @@ keys = [
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget",
     ),
+    # Key(
+    #     [WIN],
+    #     "space",
+    #     lazy.widget["keyboardlayout"].next_keyboard(),
+    #     desc="Next keyboard layout.",
+    # ),
     ########################
     ### WINDOW SWITCHING ###
     ########################
@@ -165,9 +171,6 @@ keys = [
     ),
     Key(
         [WIN],
-        L_ARROW,
-        lazy.layout.shuffle_left(),
-        lazy.layout.move_left().when(layout=["treetab"]),
         desc="Move window to the left/move tab left in treetab",
     ),
     Key(
@@ -349,7 +352,16 @@ layouts = [
     ),
 ]
 
-widget_defaults = dict(font="Ubuntu Bold", fontsize=12, padding=0, background=colors[0])
+###############
+### WIDGETS ###
+###############
+
+widget_defaults = dict(
+    font="Ubuntu Bold",
+    fontsize=12,
+    padding=0,
+    background=colors[0],
+)
 
 extension_defaults = widget_defaults.copy()
 
@@ -506,9 +518,9 @@ def init_widgets_screen2():
 
 def init_screens():
     return [
-        Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26)),
-        Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26)),
-        Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26)),
+        Screen(bottom=bar.Bar(widgets=init_widgets_screen1(), size=26)),
+        Screen(bottom=bar.Bar(widgets=init_widgets_screen2(), size=26)),
+        Screen(bottom=bar.Bar(widgets=init_widgets_screen2(), size=26)),
     ]
 
 
@@ -599,6 +611,7 @@ floating_layout = layout.Floating(
         Match(title="tastytrade"),  # tastytrade pop-out side gutter
         Match(title="tastytrade - Portfolio Report"),  # tastytrade pop-out allocation
         Match(wm_class="tasty.javafx.launcher.LauncherFxApp"),  # tastytrade settings
+        Match(wm_class="krunner"),
     ],
 )
 auto_fullscreen = True
