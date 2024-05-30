@@ -6,15 +6,13 @@ set fish_greeting                                 # Supresses fish's intro messa
 set -x LANG en_US.UTF-8
 # set -x LC_ALL en_US.UTF-8
 set -x PAGER less
-set -x EDITOR /usr/bin/code
+set -x EDITOR "code --wait"
+set -x VISUAL "code --wait"
 set -x PATH $PATH $HOME/go/bin
 # set -x TERM xterm-256color  # uncomment if some programs have issues with the emulator
 
 # For KVM
 set -x LIBVIRT_DEFAULT_URI qemu:///system
-
-# Set up fzf key bindings
-fzf --fish | source
 
 ########################################################################################
 # FUNCTIONS 
@@ -83,7 +81,7 @@ alias zyprm='sudo zypper remove'
 
 # List command
 alias ls='eza -Al --color=always --group-directories-first' # my preferred listing
-alias ll='eza -l --color=always --group-directories-first'  # long format
+alias ll='eza -Al --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 
 # Python Aliases
@@ -113,9 +111,9 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # change your default USER shell
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for change to take effect.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
-alias tofish="sudo chsh $USER -s /bin/fish && echo 'Log out and log back in for change to take effect.'"
+alias tobash="sudo chsh $USER -s $(which bash) && echo 'Log out and log back in for change to take effect.'"
+# alias tozsh="sudo chsh $USER -s $(which zsh) && echo 'Log out and log back in for change to take effect.'"
+alias tofish="sudo chsh $USER -s $(which fish) && echo 'Log out and log back in for change to take effect.'"
 
 # grep and rgrep
 alias grepls="grep -lrS"    # returns the files that simply include the pattern

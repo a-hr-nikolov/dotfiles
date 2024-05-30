@@ -17,7 +17,7 @@ eval "$(starship init bash)"
 
 # fzf - fuzzy finder integration
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+# eval "$(fzf)"
 
 # Use go bin as part of path
 export PATH=$PATH:~/go/bin
@@ -26,7 +26,8 @@ export LANG=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
 export HISTCONTROL=ignoreboth
 export PAGER=less
-export EDITOR=/usr/bin/code
+export EDITOR="code --wait"
+export VISUAL="code --wait"
 # export TERM=xterm-256color
 
 # For KVM
@@ -65,15 +66,28 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # adding flags
-alias df='df -h'               # human-readable sizes
+alias df='df -h'                # human-readable sizes
 alias du='du -h'
-alias free='free -m'           # show sizes in MB
-alias grep='grep --color=auto' # colorize output (good for log files)
-alias cp='cp -i'
+alias free='free -m'            # show sizes in MB
+alias grep='grep --color=auto'  # colorize output (good for log files)
+alias cp='cp -i'                # makes potentially destructive commands require confirmation
 alias mv='mv -i'
 alias rm='rm -i'
 
 # change your default USER shell
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for change to take effect.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
-alias tofish="sudo chsh $USER -s /bin/fish && echo 'Log out and log back in for change to take effect.'"
+alias tobash="sudo chsh $USER -s $(which bash) && echo 'Log out and log back in for change to take effect.'"
+# alias tozsh="sudo chsh $USER -s $(which zsh) && echo 'Log out and log back in for change to take effect.'"
+alias tofish="sudo chsh $USER -s $(which fish) && echo 'Log out and log back in for change to take effect.'"
+
+# grep and rgrep
+alias grepls="grep -lrS"    # returns the files that simply include the pattern
+alias rg="rg -S"            # smartcase search
+alias rgls="rg -lrS"
+
+# searching aliases
+alias fcmd="history | fzf"
+alias fman="compgen -c | fzf | xargs man"  # actually doesn't work in fish
+
+# utils
+alias fbig="du -ah . | sort -hr | head -n 30"  # gets disk usage, sorts it in reverse, prints the first 30
+alias bye="sudo shutdown -h now"
