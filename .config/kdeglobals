@@ -133,8 +133,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=818,573
-History Items[$e]=file:$HOME/Desktop
+DirSelectDialog Size=864,600
+History Items[$e]=file:$HOME/VMs,file:$HOME/Desktop
 
 [General]
 BrowserApplication=google-chrome.desktop

@@ -12,3 +12,7 @@
 	ui = true
 [merge]
   tool = code
+[rebase]
+	autoStash = true
+[alias]
+	logline = log --oneline --abbrev-commit --all --decorate --graph
