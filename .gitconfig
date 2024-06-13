@@ -16,3 +16,6 @@
 	autoStash = true
 [alias]
 	logline = log --oneline --abbrev-commit --all --decorate --graph
+	prettylog = log --pretty='%C(red)%h%Creset%C(yellow)%d%Creset %s %C(cyan)(%ar)%Creset'
+	new = prettylog main..HEAD
+	missing = prettylog HEAD..main
