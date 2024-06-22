@@ -130,3 +130,6 @@ alias fman="compgen -c | fzf | xargs man"  # actually doesn't work in fish
 # utils
 alias fbig="du -ah . | sort -hr | head -n 30"  # gets disk usage, sorts it in reverse, prints the first 30
 alias bye="sudo shutdown -h now"
+
+# dict
+alias dict="/home/anikolov/repos/en-bg-dict/.venv/bin/python /home/anikolov/repos/en-bg-dict/en_bg_dict/main.py"
