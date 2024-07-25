@@ -23,25 +23,24 @@ switch_to_desktop() {
 ########################
 ### DAEMON LAUNCHING ###
 ########################
-openrazer-daemon & disown
 
 
 #####################
 ### APP LAUNCHING ###
 #####################
-switch_to_desktop 1  # in case someone runs it directly
-sleep 2  # Necessary due to bootup taking some time.
+# switch_to_desktop 1  # in case someone runs it directly
+sleep 1  # Necessary due to bootup taking some time.
 /opt/vivaldi/vivaldi --profile-directory=Default --app-id=kippjfofjhjlffjecoapiogbkgbpmgej &  # Messenger
-sleep 1
+# sleep 1
 vivaldi --profile-directory=Default &
 firefox &
-sleep 3
+# sleep 3
 
-### Work Profile
-switch_to_desktop 2
-google-chrome --profile-directory="Profile 2" &
-sleep 2
+# ### Work Profile
+# switch_to_desktop 2
+# google-chrome --profile-directory="Profile 2" &
+# sleep 2
 
-### END OF CHAIN
-# Optionally, you may stay on the desktop with the last app open.
-switch_to_desktop 1
+# ### END OF CHAIN
+# # Optionally, you may stay on the desktop with the last app open.
+# switch_to_desktop 1
