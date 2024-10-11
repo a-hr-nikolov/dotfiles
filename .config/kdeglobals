@@ -138,9 +138,10 @@ History Items[$e]=file:$HOME/repos/en-bg-dict,file:$HOME/VMs,file:$HOME/Desktop
 
 [General]
 BrowserApplication=google-chrome.desktop
-ColorSchemeHash=cb4c6ee5cc9a59dbe09fb467a529af1bf5c55c97
+ColorSchemeHash=4a48bd34ba53d580d8594cb0216221e77518509f
 TerminalApplication=kitty
 TerminalService=kitty.desktop
+UseSystemBell=true
 XftHintStyle=hintslight
 XftSubPixel=rgb
 fixed=FiraMono Nerd Font,9,-1,5,400,0,0,0,0,0,0,0,0,0,0,1

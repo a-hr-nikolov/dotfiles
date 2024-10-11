@@ -6,14 +6,15 @@
 [pull]
 	rebase = false
 [core]
-  pager = less -FXRS
-	editor = code
+	pager = less -FXRS
+	editor = code --wait
 [color]
 	ui = true
 [merge]
-  tool = code
+	tool = code --wait
 [rebase]
 	autoStash = true
+	autosquash = false
 [alias]
 	logline = log --oneline --abbrev-commit --all --decorate --graph
 	prettylog = log --pretty='%C(red)%h%Creset%C(yellow)%d%Creset %s %C(cyan)(%ar)%Creset'
