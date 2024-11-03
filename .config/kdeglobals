@@ -138,7 +138,7 @@ History Items[$e]=file:$HOME/repos/en-bg-dict,file:$HOME/VMs,file:$HOME/Desktop
 
 [General]
 BrowserApplication=google-chrome.desktop
-ColorSchemeHash=4a48bd34ba53d580d8594cb0216221e77518509f
+ColorSchemeHash=babca25f3a5cf7ece26a85de212ab43d0a141257
 TerminalApplication=kitty
 TerminalService=kitty.desktop
 UseSystemBell=true

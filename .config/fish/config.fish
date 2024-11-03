@@ -8,6 +8,8 @@ set -x LANG en_US.UTF-8
 set -x PAGER less
 set -x EDITOR /usr/bin/code
 set -x PATH $PATH $HOME/go/bin
+set -x PATH $PATH $HOME/bin
+set -x PATH $HOME/.local/bin $PATH
 # set -x TERM xterm-256color  # uncomment if some programs have issues with the emulator
 
 # For KVM
@@ -90,9 +92,15 @@ alias lt='eza -aT --color=always --group-directories-first' # tree listing
 alias py='python3'
 alias python='python3'
 alias djm='python3 manage.py'
+
+# Poetry Aliases
 alias prun='poetry run'
 alias ppy='poetry run python'
 alias ppm='poetry run python manage.py'
+
+# uv Aliases
+alias upy='uv run python'
+alias upm='uv run python manage.py'
 
 # Obsidian Sync Aliases
 alias obpushdrive='rclone sync ~/gdrive/Obsidian drive:obsidian'
