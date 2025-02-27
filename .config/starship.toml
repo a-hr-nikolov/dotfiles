@@ -16,8 +16,6 @@ $package\
 $terraform\
 $nix_shell\
 $conda\
-$aws\
-$gcloud\
 $azure\
 $direnv\
 $env_var\

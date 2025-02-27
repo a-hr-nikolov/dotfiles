@@ -6,7 +6,7 @@ set fish_greeting                                 # Supresses fish's intro messa
 set -x LANG en_US.UTF-8
 # set -x LC_ALL en_US.UTF-8
 set -x PAGER less
-set -x EDITOR /usr/bin/code
+set -x EDITOR '/usr/bin/code -w'
 set -x PATH $PATH $HOME/go/bin
 set -x PATH $PATH $HOME/bin
 set -x PATH $HOME/.local/bin $PATH
@@ -144,3 +144,9 @@ alias bye="sudo shutdown -h now"
 
 # dict
 alias dict="/home/anikolov/repos/en-bg-dict/.venv/bin/python /home/anikolov/repos/en-bg-dict/en_bg_dict/main.py"
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/anikolov/Downloads/gcloud/google-cloud-sdk/path.fish.inc' ]; . '/home/anikolov/Downloads/gcloud/google-cloud-sdk/path.fish.inc'; end

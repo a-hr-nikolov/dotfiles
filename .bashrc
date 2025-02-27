@@ -26,7 +26,7 @@ export LANG=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
 export HISTCONTROL=ignoreboth
 export PAGER=less
-export EDITOR=/usr/bin/code
+export EDITOR="/usr/bin/code -w"
 # export TERM=xterm-256color
 
 # For KVM
@@ -48,7 +48,7 @@ alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 
 # Python Aliases
-alias py='python3'
+alias py='python3.12'
 alias djm='python3 manage.py'
 
 # Obsidian Sync Aliases
@@ -77,3 +77,6 @@ alias rm='rm -i'
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Log out and log back in for change to take effect.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Log out and log back in for change to take effect.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Log out and log back in for change to take effect.'"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

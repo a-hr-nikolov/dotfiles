@@ -3,8 +3,9 @@
 [user]
 	email = a.hr.nikolov@gmail.com
 	name = Atanas Nikolov
+	name = a-hr-nikolov
 [pull]
-	rebase = false
+	rebase = true
 [core]
 	pager = less -FXRS
 	editor = code --wait
@@ -17,6 +18,8 @@
 	autosquash = false
 [alias]
 	logline = log --oneline --abbrev-commit --all --decorate --graph
-	prettylog = log --pretty='%C(red)%h%Creset%C(yellow)%d%Creset %s %C(cyan)(%ar)%Creset'
+	pl = log --pretty='%C(red)%h%Creset%C(yellow)%d%Creset %s %C(cyan)(%ad || %ar)%Creset' --date=format:'%Y-%m-%d %H:%M'
 	new = prettylog main..HEAD
 	missing = prettylog HEAD..main
+[rerere]
+	enabled = true
